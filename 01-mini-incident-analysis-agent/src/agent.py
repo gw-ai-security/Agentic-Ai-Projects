@@ -77,6 +77,20 @@ class IncidentAgent:
             raw_json = response.choices[0].message.content
             clean_json = self._clean_json_response(raw_json)
             data = json.loads(clean_json)
+            
+            string_fields = ["incident_summary", "incident_category", "severity", "affected_component", "confidence", "reasoning"]
+            for field in string_fields:
+                if field in data:
+                    if isinstance(data[field], list):
+                        data[field] = " ".join(str(x) for x in data[field])
+                    elif not isinstance(data[field], str):
+                        data[field] = str(data[field])
+                        
+            if "recommended_actions" in data and not isinstance(data["recommended_actions"], list):
+                if isinstance(data["recommended_actions"], str):
+                    data["recommended_actions"] = [data["recommended_actions"]]
+                else:
+                    data["recommended_actions"] = [str(data["recommended_actions"])]
         except Exception as e:
             data = {
                 "incident_summary": f"Failed to call LLM or parse response: {str(e)}",
