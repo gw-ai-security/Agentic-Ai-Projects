@@ -15,4 +15,4 @@ A later demo should show a small AI-supported incident analysis workflow.
 - explainable workflow
 - human review remains necessary
 
-This demo is planned but not executable yet because Phase 2 only establishes local data context, not processing logic.
+This demo is planned but not executable end-to-end yet because Phase 5 (the agent logic) is missing. However, the Phase 4 tool layer can securely retrieve context for the demo.

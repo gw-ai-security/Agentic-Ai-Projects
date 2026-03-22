@@ -24,4 +24,4 @@
 - keep tools read-only in later phases
 - require human review
 
-No runtime security mechanisms are implemented in Phase 1 because no executable logic exists yet.
+Phase 4 tool layer is strictly read-only and accesses only local JSON files. It makes no network requests and has no side-effects.
