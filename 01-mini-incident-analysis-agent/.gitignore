@@ -9,3 +9,6 @@ __pycache__/
 *.log
 outputs/
 .DS_Store
+data/*.tmp
+coverage/
+.pytest_cache/

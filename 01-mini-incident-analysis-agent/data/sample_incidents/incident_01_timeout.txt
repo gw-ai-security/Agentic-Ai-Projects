@@ -1,0 +1,1 @@
+Signal monitoring service on rail gateway R-17 shows repeated timeout errors since 07:45. Two regional dashboards are delayed. No full outage has been reported yet.

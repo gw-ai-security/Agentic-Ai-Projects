@@ -1,0 +1,20 @@
+[
+  {
+    "asset_id": "R-17",
+    "type": "Rail Gateway",
+    "criticality": "high",
+    "owner_team": "Edge Systems"
+  },
+  {
+    "asset_id": "AUTH-02",
+    "type": "Authentication Service",
+    "criticality": "high",
+    "owner_team": "Identity Platform"
+  },
+  {
+    "asset_id": "DP-09",
+    "type": "Data Pipeline Node",
+    "criticality": "medium",
+    "owner_team": "Data Operations"
+  }
+]

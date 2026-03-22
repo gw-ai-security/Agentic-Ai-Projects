@@ -1,0 +1,1 @@
+The daily analytics feed is delayed by more than 40 minutes. Data pipeline node DP-09 shows increased processing latency and queue backlog.

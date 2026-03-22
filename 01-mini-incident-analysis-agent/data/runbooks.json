@@ -1,0 +1,32 @@
+[
+  {
+    "issue_type": "timeout",
+    "title": "Timeout Runbook",
+    "steps": [
+      "Check network connectivity between affected services",
+      "Inspect application and gateway logs for repeated timeout patterns",
+      "Validate upstream dependency availability",
+      "Escalate to platform operations if issue persists"
+    ]
+  },
+  {
+    "issue_type": "auth_failure",
+    "title": "Authentication Failure Runbook",
+    "steps": [
+      "Check recent credential or token changes",
+      "Validate identity provider availability",
+      "Inspect authentication logs for error details",
+      "Confirm client configuration and permissions"
+    ]
+  },
+  {
+    "issue_type": "data_delay",
+    "title": "Data Delay Runbook",
+    "steps": [
+      "Check ingestion pipeline status",
+      "Inspect queue backlog and processing latency",
+      "Validate timestamp freshness of upstream data",
+      "Notify data operations team if delay exceeds SLA threshold"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+# Security Notes
+
+## Security Position
+- read-only prototype mindset
+- no autonomous system changes
+- no production access
+
+## Planned Security Measures
+- API keys in .env only
+- no hardcoded secrets
+- no production data
+- narrow, controlled tool inputs
+- human review of generated outputs
+
+## Risks
+- wrong classification
+- false confidence
+- incomplete context
+- unsafe future scope expansion
+
+## Mitigation
+- keep the scope small
+- separate documentation from implementation claims
+- keep tools read-only in later phases
+- require human review
+
+No runtime security mechanisms are implemented in Phase 1 because no executable logic exists yet.

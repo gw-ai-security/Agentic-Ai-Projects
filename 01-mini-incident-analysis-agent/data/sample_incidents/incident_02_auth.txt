@@ -1,0 +1,1 @@
+Multiple operators reported login failures in the control platform. Authentication service AUTH-02 returns token validation errors for several internal clients.
