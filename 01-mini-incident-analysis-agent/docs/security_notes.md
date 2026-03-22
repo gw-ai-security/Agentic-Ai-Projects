@@ -24,4 +24,4 @@
 - keep tools read-only in later phases
 - require human review
 
-Phase 4 tool layer is strictly read-only and accesses only local JSON files. It makes no network requests and has no side-effects. Phase 5 agent makes outbound network requests only to the configured LLM API. Outputs remain a decision support tool requiring human review.
+The final prototype tool layer is strictly read-only and accesses only local JSON files. It makes no network requests and has no side-effects. The agent module makes outbound network requests only to the configured LLM API (if a key is provided). Outputs are purely for decision support, requiring human review. No production systems are integrated.

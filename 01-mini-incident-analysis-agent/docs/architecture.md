@@ -1,12 +1,12 @@
 # Architecture
 
-## Current State in Phase 5
-- repository scaffold exists
-- documentation exists
-- local data context (assets, runbooks, incidents) is prepared
+## Final Project State (Phase 6 Closure)
+- local data context (assets, runbooks, incidents) is prepared and mock-complete
 - core structures (schemas, prompts, formatter, main runner) are structured
-- local tool layer (MCP-Lite) is implemented in minimal form
-- agent layer is implemented as a minimal prototype
+- local tool layer (MCP-Lite) is implemented in minimal form and strictly read-only
+- agent layer is implemented as a minimal, explainable prototype
+- execution flow is end-to-end testable for all three demo cases
+- no complex Multi-Agent or ReAct loops are present
 
 ## Planned Components
 

@@ -16,32 +16,40 @@ def main():
         print("Warning: OPENAI_API_KEY is missing or not set in .env. Running without LLM.")
         api_key = ""
         
-    # 3. Read the sample incident file
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    incident_path = os.path.join(base_dir, "data", "sample_incidents", "incident_01_timeout.txt")
+    print("--- Mini Incident Analysis Agent (Phase 6 Final) ---")
+    print(f"Model configured: {model_name}\n")
     
-    with open(incident_path, "r", encoding="utf-8") as f:
-        incident_text = f.read()
-        
-    # 4. Short status output indicating readiness
-    print("--- Mini Incident Analysis Agent (Phase 5) ---")
-    print(f"Model configured: {model_name}")
-    print(f"Loaded incident from {os.path.basename(incident_path)} ({len(incident_text)} chars)")
-    print("-------------------------------------------------------")
-    
-    # 5. Initialize Agent and Analyze
     agent = IncidentAgent(api_key=api_key, model_name=model_name)
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     
-    print("Analyzing incident...")
-    report = agent.analyze_incident(incident_text)
+    incident_files = [
+        "incident_01_timeout.txt", 
+        "incident_02_auth.txt", 
+        "incident_03_data_delay.txt"
+    ]
     
-    output_path = os.path.join(base_dir, "outputs", "incident_report.md")
-    save_markdown_report(report, output_path)
-    
-    print("Analysis complete!")
-    print(f"Summary: {report.incident_summary}")
-    print(f"Used Tools: {', '.join(report.used_tools) if report.used_tools else 'none'}")
-    print(f"Report saved to: {output_path}")
+    for filename in incident_files:
+        incident_path = os.path.join(base_dir, "data", "sample_incidents", filename)
+        try:
+            with open(incident_path, "r", encoding="utf-8") as f:
+                incident_text = f.read()
+        except FileNotFoundError:
+            print(f"Skipping {filename}: File not found.")
+            continue
+            
+        print(f"Analyzing {filename}...")
+        report = agent.analyze_incident(incident_text)
+        
+        out_name = os.path.splitext(filename)[0] + "_report.md"
+        output_path = os.path.join(base_dir, "outputs", out_name)
+        save_markdown_report(report, output_path)
+        
+        print(f"  -> Summary: {report.incident_summary}")
+        print(f"  -> Used Tools: {', '.join(report.used_tools) if report.used_tools else 'none'}")
+        print(f"  -> Saved to: outputs/{out_name}\n")
+
+    print("-------------------------------------------------------")
+    print("Project Execution Complete.")
 
 if __name__ == "__main__":
     main()
