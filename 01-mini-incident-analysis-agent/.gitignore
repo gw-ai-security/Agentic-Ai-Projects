@@ -12,3 +12,4 @@ outputs/
 data/*.tmp
 coverage/
 .pytest_cache/
+src/check.py
