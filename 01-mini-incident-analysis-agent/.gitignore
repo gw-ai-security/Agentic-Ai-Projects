@@ -1,0 +1,11 @@
+.agent/skills/
+.agent/artifacts/
+.agent/tmp/
+.gemini/
+.env
+.venv/
+__pycache__/
+*.pyc
+*.log
+outputs/
+.DS_Store

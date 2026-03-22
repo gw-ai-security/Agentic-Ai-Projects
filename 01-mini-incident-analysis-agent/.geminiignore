@@ -1,0 +1,9 @@
+.agent/artifacts/
+.agent/tmp/
+.env
+.venv/
+__pycache__/
+*.pyc
+*.log
+outputs/
+.DS_Store
