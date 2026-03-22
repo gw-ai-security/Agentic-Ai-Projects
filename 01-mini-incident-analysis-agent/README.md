@@ -5,7 +5,7 @@ This project is a deliberately small prototype.
 The objective is to analyze a technical incident description, potentially retrieve controlled contextual information in a later phase, and produce a structured incident report.
 
 ## Current Repository Status
-Phase 1 scaffold, documentation, and Phase 2 local data context are in place. There is no incident processing implementation yet, and no MCP-like tool layer implemented yet.
+Phase 1 scaffold, documentation, and Phase 2 local data context are in place. Phase 3 core structures (schemas, prompts, formatter, main scaffold) are also implemented. There is no incident processing implementation yet, and no MCP-like tool layer implemented yet.
 
 ## Why this project
 - AI use case analysis
@@ -55,4 +55,4 @@ cp .env.example .env
 - no production integration
 - no autonomous remediation
 
-This repository currently contains the Phase 1 scaffold and Phase 2 local data context. Implementation logic and end-to-end execution are part of later phases.
+This repository currently contains the Phase 1 scaffold, Phase 2 local data context, and Phase 3 core structure. Implementation logic and end-to-end execution are part of later phases.

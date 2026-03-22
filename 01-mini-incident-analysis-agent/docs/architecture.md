@@ -1,9 +1,11 @@
 # Architecture
 
-## Current State in Phase 1
+## Current State in Phase 3
 - repository scaffold exists
 - documentation exists
-- implementation is not yet in place
+- local data context (assets, runbooks, incidents) is prepared
+- core structures (schemas, prompts, formatter, main runner) are structured
+- agent and tool implementation is not yet in place
 
 ## Planned Components
 
