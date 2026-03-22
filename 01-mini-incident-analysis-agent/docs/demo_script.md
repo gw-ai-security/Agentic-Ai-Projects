@@ -15,4 +15,4 @@ A later demo should show a small AI-supported incident analysis workflow.
 - explainable workflow
 - human review remains necessary
 
-This demo is planned but not executable end-to-end yet because Phase 5 (the agent logic) is missing. However, the Phase 4 tool layer can securely retrieve context for the demo.
+This demo is executable. The agent securely retrieves local context, sends it to the LLM, and generates a `.md` report. Ensure your `.env` is configured before running.

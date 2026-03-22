@@ -1,12 +1,12 @@
 # Architecture
 
-## Current State in Phase 4
+## Current State in Phase 5
 - repository scaffold exists
 - documentation exists
 - local data context (assets, runbooks, incidents) is prepared
 - core structures (schemas, prompts, formatter, main runner) are structured
 - local tool layer (MCP-Lite) is implemented in minimal form
-- agent implementation is not yet in place
+- agent layer is implemented as a minimal prototype
 
 ## Planned Components
 

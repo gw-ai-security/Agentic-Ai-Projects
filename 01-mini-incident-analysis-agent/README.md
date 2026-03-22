@@ -5,7 +5,7 @@ This project is a deliberately small prototype.
 The objective is to analyze a technical incident description, potentially retrieve controlled contextual information in a later phase, and produce a structured incident report.
 
 ## Current Repository Status
-Phase 1-3 structures and Phase 4 local tool layer (read-only MCP-Lite with `get_runbook` and `get_asset_context`) are implemented. There is no incident processing agent implementation yet.
+Phase 5 minimal incident agent is implemented. It provides deterministic context retrieval and structured Markdown reporting. The system uses a simple, local read-only tool layer.
 
 ## Why this project
 - AI use case analysis
@@ -55,4 +55,4 @@ cp .env.example .env
 - no production integration
 - no autonomous remediation
 
-This repository currently contains Phase 1-3 scaffolds and the Phase 4 local read-only tool layer. Agent logic and end-to-end execution are part of Phase 5.
+This repository currently contains the completed Phase 5 MVP. It can perform basic incident triage using local mock data. Further scale (Phase 6/7) is not yet implemented.
