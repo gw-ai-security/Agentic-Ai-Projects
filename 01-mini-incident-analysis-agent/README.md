@@ -5,7 +5,7 @@ This project is a deliberately small prototype.
 The objective is to analyze a technical incident description, potentially retrieve controlled contextual information in a later phase, and produce a structured incident report.
 
 ## Current Repository Status
-**Project Closed**. The deliberate small prototype is complete through Phase 6. It features local data context, a local read-only tool layer (MCP-Lite), and a deterministic agent orchestrator. It executes end-to-end on three sample incidents, outputting Markdown reports.
+**Project Closed (Local Ollama Version)**. The deliberate small prototype is complete. It features local data context, a local read-only tool layer (MCP-Lite), and a deterministic agent orchestrator powered by local execution via Ollama. It executes end-to-end entirely locally on three sample incidents, outputting Markdown reports.
 
 ## Why this project
 - AI use case analysis
@@ -26,27 +26,33 @@ Input Incident -> Analysis -> Optional Context Lookup -> Structured Markdown Rep
 
 ## Setup
 
-To set up the project locally, run the following commands:
+To set up the project locally with Ollama, run the following commands:
 
 ```bash
-# 1. Create a virtual environment
+# 1. Start the local Ollama container
+docker compose up -d ollama
+
+# 2. Pull the required model
+docker exec -it ollama ollama pull llama3.2
+
+# 3. Create a virtual environment
 python -m venv .venv
 
-# 2. Activate the virtual environment
+# 4. Activate the virtual environment
 # On Windows:
 .venv\Scripts\activate
 # On Linux/macOS:
 # source .venv/bin/activate
 
-# 3. Install requirements
+# 5. Install requirements
 pip install -r requirements.txt
 
-# 4. Copy .env.example to .env (use `copy` on Windows cmd)
-cp .env.example .env
+# 6. Copy .env.example to .env
+# Windows: copy .env.example .env
+# Unix: cp .env.example .env
 ```
 
-5. Open the `.env` file and add your `OPENAI_API_KEY`.
-6. Implementation follows in later phases.
+7. Execute the agent: `python -m src.main`
 
 ## Scope Limits
 - no UI

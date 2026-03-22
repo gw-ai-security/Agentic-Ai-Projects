@@ -8,18 +8,16 @@ def main():
     # 1. Load environment variables
     load_dotenv()
     
-    # 2. Read configuration
-    api_key = os.getenv("OPENAI_API_KEY", "")
-    model_name = os.getenv("MODEL_NAME", "gpt-4o-mini")
-    
-    if not api_key or api_key == "your_api_key_here":
-        print("Warning: OPENAI_API_KEY is missing or not set in .env. Running without LLM.")
-        api_key = ""
+    # 2. Read local Ollama configuration as standard
+    api_key = os.getenv("LLM_API_KEY", "ollama")
+    base_url = os.getenv("LLM_BASE_URL", "http://localhost:11434/v1/")
+    model_name = os.getenv("MODEL_NAME", "llama3.2")
         
-    print("--- Mini Incident Analysis Agent (Phase 6 Final) ---")
+    print("--- Mini Incident Analysis Agent (Local Ollama Version) ---")
+    print(f"Provider: Ollama @ {base_url}")
     print(f"Model configured: {model_name}\n")
     
-    agent = IncidentAgent(api_key=api_key, model_name=model_name)
+    agent = IncidentAgent(api_key=api_key, base_url=base_url, model_name=model_name)
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     
     incident_files = [

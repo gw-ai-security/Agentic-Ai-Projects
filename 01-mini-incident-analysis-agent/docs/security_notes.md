@@ -24,4 +24,4 @@
 - keep tools read-only in later phases
 - require human review
 
-The final prototype tool layer is strictly read-only and accesses only local JSON files. It makes no network requests and has no side-effects. The agent module makes outbound network requests only to the configured LLM API (if a key is provided). Outputs are purely for decision support, requiring human review. No production systems are integrated.
+The final prototype tool layer is strictly read-only and accesses only local JSON files. It makes no network requests and has no side-effects. The agent module communicates only with a locally containerized Ollama instance on localhost. This eliminates external LLM data leaks. Outputs are purely for decision support, requiring human review. No production systems are integrated.

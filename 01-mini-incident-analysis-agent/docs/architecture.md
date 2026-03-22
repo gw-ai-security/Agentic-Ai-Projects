@@ -1,11 +1,12 @@
 # Architecture
 
-## Final Project State (Phase 6 Closure)
+## Final Project State (Local Ollama Version)
 - local data context (assets, runbooks, incidents) is prepared and mock-complete
 - core structures (schemas, prompts, formatter, main runner) are structured
 - local tool layer (MCP-Lite) is implemented in minimal form and strictly read-only
-- agent layer is implemented as a minimal, explainable prototype
-- execution flow is end-to-end testable for all three demo cases
+- agent layer is implemented as a minimal, explainable prototype using local inference (Ollama via Docker)
+- Python application remains strictly on the host system communicating via localhost
+- execution flow is end-to-end testable entirely offline for all three demo cases
 - no complex Multi-Agent or ReAct loops are present
 
 ## Planned Components
